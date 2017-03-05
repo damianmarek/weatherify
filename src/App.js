@@ -36,14 +36,16 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <p className="App-intro">
-          Show a temperature in your city
-        </p>
-        <input ref={(input) => { this.textInput = input }} />
-        <button onClick={() => {this.handleButtonPress()}} >
-          Show
-        </button>
-        <Weather degrees={this.state.degrees} />
+        <div className='weather-div'>
+          <p className="App-intro">
+            Show a temperature in your city
+          </p>
+          <input className='weather-input' ref={(input) => { this.textInput = input }} />
+          <button className='weather-button' onClick={() => {this.handleButtonPress()}} >
+            Show
+          </button>
+          <Weather degrees={this.state.degrees} />
+        </div>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Verdana;
 }
 
 .App-logo {
@@ -21,4 +22,26 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.weather-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-input {
+  width: 8rem;
+}
+
+.weather-button {
+  margin: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  text-decoration: none;
+  height: 2rem;
+  width: 10rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #12a366;
 }
