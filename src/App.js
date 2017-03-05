@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer'
 import Weather from './components/Weather'
 import './App.css';
 
@@ -46,6 +47,7 @@ class App extends Component {
           </button>
           <Weather degrees={this.state.degrees} />
         </div>
+        <Footer />
       </div>
     );
   }
