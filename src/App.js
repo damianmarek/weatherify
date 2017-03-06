@@ -8,27 +8,32 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      city: '',
       degrees: 0,
+      city: ' ',
+      country: ' ',
     }
   }
 
   handleButtonPress = (event) => {
-    this.setState({ city: this.textInput.value })
     this.fetchWeather(this.textInput.value)
   }
 
   fetchWeather = (city) => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=76deb9243afb0cb5277a40b4f8b77bf8&units=metric`)
+    fetch(`https://api.apixu.com/v1/current.json?key=9319ce9c3ecf4d88af904639170603&q=${city}`)
     .then(res => res.json())
     .then((res) => {
+      console.log(res)
       this.setState({
-        degrees: res.main.temp
+        degrees: res.current.temp_c,
+        city: res.location.name,
+        country: res.location.country,
       })
     })
     .catch(error => {
       this.setState({
-        degrees: 0
+        degrees: 0,
+        city: ' ',
+        country: ' ',
       })
     })
   }
@@ -45,7 +50,7 @@ class App extends Component {
           <button className='weather-button' onClick={() => {this.handleButtonPress()}} >
             Show
           </button>
-          <Weather degrees={this.state.degrees} />
+          <Weather degrees={this.state.degrees} city={this.state.city} country={this.state.country} />
         </div>
         <Footer />
       </div>
