@@ -1,6 +1,5 @@
 import React from 'react'
 import { VictoryLine, VictoryChart} from 'victory'
-import './styles/Weather.css'
 
 let data = [
   { name: '00', temp: 0, label: '0'},
