@@ -15,6 +15,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount = () => {
+    document.title = 'Weatherify'
+  }
+
   handleButtonPress = (event) => {
     this.fetchWeather(this.textInput.value)
   }
