@@ -11,6 +11,7 @@ class App extends Component {
       degrees: 0,
       city: ' ',
       country: ' ',
+      forecast: { },
     }
   }
 
@@ -19,14 +20,14 @@ class App extends Component {
   }
 
   fetchWeather = (city) => {
-    fetch(`https://api.apixu.com/v1/current.json?key=9319ce9c3ecf4d88af904639170603&q=${city}`)
+    fetch(`https://api.apixu.com/v1/forecast.json?key=${process.env.REACT_APP_APIXU_API_KEY}&q=${city}&days=7`)
     .then(res => res.json())
     .then((res) => {
-      console.log(res)
       this.setState({
         degrees: res.current.temp_c,
         city: res.location.name,
         country: res.location.country,
+        forecast: res.forecast,
       })
     })
     .catch(error => {
@@ -50,7 +51,7 @@ class App extends Component {
           <button className='weather-button' onClick={() => {this.handleButtonPress()}} >
             Show
           </button>
-          <Weather degrees={this.state.degrees} city={this.state.city} country={this.state.country} />
+          <Weather degrees={this.state.degrees} city={this.state.city} country={this.state.country} forecast={this.state.forecast}/>
         </div>
         <Footer />
       </div>
