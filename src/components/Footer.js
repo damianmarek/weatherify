@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <div className='footer'>
         <h3 className='footer-text'>
-          Created by Damian Marek
+          Created by <a className='footer-link' target='_blank' href='https://github.com/damianmarek'>Damian Marek</a>
         </h3>
       </div>
     )
