@@ -1,5 +1,7 @@
 import React from 'react'
 import { VictoryLine, VictoryChart} from 'victory'
+import WeatherCard from './WeatherCard'
+import './styles/Weather.css'
 
 let data = [
   { name: '00', temp: 0, label: '0'},
@@ -23,9 +25,10 @@ class Weather extends React.Component {
     let weather = null;
     if(this.props.city !== ' ') {
       weather =
-      <div>
-        {this.props.degrees}° in {this.props.city}, {this.props.country}
+      <div className='weather-card'>
+        <WeatherCard degrees={this.props.degrees} city={this.props.city}/>
       </div>
+
     }
     return (
       <div>
