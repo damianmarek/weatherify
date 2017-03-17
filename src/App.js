@@ -49,7 +49,7 @@ class App extends Component {
         <Header />
         <div className='weather-div'>
           <p className="App-intro">
-            Show a temperature in your city
+            Display a temperature in your city
           </p>
           <input className='weather-input' ref={(input) => { this.textInput = input }} />
           <button className='weather-button' onClick={() => {this.handleButtonPress()}} >
